@@ -116,10 +116,12 @@ version: '3.8'
 
 services:
   app:
-    image: ghcr.io/omarichou/ercerie_last-version-coty-c:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: crystal_mercerie_container
-    ports:
-      - "3000:3000"
+    expose:
+      - "3000"
     env_file:
       - .env
     environment:
