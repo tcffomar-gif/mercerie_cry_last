@@ -57,10 +57,6 @@ export const useVariantSelection = ({ product, locale, modelLabel }) => {
   const selectionOrder = useMemo(() => {
     const order = [];
 
-    if (activeVariantColors.length > 0) {
-      order.push("couleur");
-    }
-
     activeVariants.forEach((variant) => {
       if (variant?.type?.fr) {
         order.push(variant.type.fr);
