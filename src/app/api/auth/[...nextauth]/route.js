@@ -84,7 +84,7 @@ export const authOptions = {
         try {
           await connectMongoDB();
           const user = await UserModal.findOne({ email: credentials.email });
-
+             
           if (!user) return null;
           
           const isValid = await bcrypt.compare(credentials.password, user.password);

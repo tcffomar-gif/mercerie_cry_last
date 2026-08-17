@@ -52,6 +52,14 @@ function applyCors(response) {
 }
 
 export default function middleware(request) {
+  if (request.nextUrl.pathname.startsWith("/api/")) {
+    if (request.method === "OPTIONS") {
+      return applyCors(NextResponse.json({}, { status: 200 }));
+    }
+    const response = NextResponse.next();
+    return applyCors(response);
+  }
+
   if (request.method === "OPTIONS") {
     return applyCors(NextResponse.json({}, { status: 200 }));
   }
@@ -60,5 +68,5 @@ export default function middleware(request) {
 }
 
 export const config = {
-  matcher: ["/", "/(fr|ar)/:path*"],
+  matcher: ["/", "/(fr|ar)/:path*", "/api/:path*"],
 };
