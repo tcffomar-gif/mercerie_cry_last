@@ -6,6 +6,8 @@ import {
 } from "./category.constants";
 import { parseCategoryResponse } from "./category.schemas";
 
+const BASE_URL = process.env.NEXT_PUBLIC_MY_URL || "";
+
 const EMPTY_RESPONSE = {
   products: [],
   pagination: {
@@ -40,7 +42,7 @@ const buildCategoryUrl = ({ id, page, search, sortBy, sub }) => {
   if (sortBy) params.set("sortBy", sortBy);
   if (sub) params.set("sub", sub);
 
-  return `/api/get_product_by_category?${params.toString()}`;
+  return `${BASE_URL}/api/get_product_by_category?${params.toString()}`;
 };
 
 const fetchCategoryProducts = async ({ id, page, search, sortBy, sub }) => {
