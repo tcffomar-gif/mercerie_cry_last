@@ -383,7 +383,7 @@ const Page = () => {
     try {
       // Check minimum order amount
       const minPriceRes = await fetch(
-        `${process.env.NEXT_PUBLIC_MY_URL}/api/get_min_price`
+        `/api/get_min_price`
       );
       if (!minPriceRes.ok) throw new Error("Failed to fetch minimum price");
       const { price_min } = await minPriceRes.json();
@@ -395,7 +395,7 @@ const Page = () => {
 
       // Submit order
       const orderRes = await fetch(
-        `${process.env.NEXT_PUBLIC_MY_URL}/api/addOrder`,
+        `/api/addOrder`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -408,7 +408,7 @@ const Page = () => {
       await Promise.all(
         cartItems.map((item) =>
           fetch(
-            `${process.env.NEXT_PUBLIC_MY_URL}/api/update_Product_PurchaseCount`,
+            `/api/update_Product_PurchaseCount`,
             {
               method: "PUT",
               headers: { "Content-Type": "application/json" },

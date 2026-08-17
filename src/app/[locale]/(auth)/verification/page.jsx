@@ -92,7 +92,7 @@ const Page = () => {
       // Vérifier
       // Envoyer les données au backend pour créer un compte
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_MY_URL}/api/Verefication_link_email`,
+        `/api/Verefication_link_email`,
         {
           method: "POST",
           headers: {

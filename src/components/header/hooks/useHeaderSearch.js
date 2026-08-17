@@ -73,7 +73,7 @@ export const useHeaderSearch = ({ locale }) => {
   const fetchProducts = useCallback(async () => {
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_MY_URL}/api/get_Products`,
+        `/api/get_Products`,
         { method: "GET" }
       );
 

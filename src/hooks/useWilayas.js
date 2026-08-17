@@ -17,7 +17,7 @@ export function useWilayas() {
       setError(null);
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_MY_URL || 'http://localhost:3000'}/api/get_wilayas_dynamic`,
+        `/api/get_wilayas_dynamic`,
         {
           method: 'GET',
           headers: {

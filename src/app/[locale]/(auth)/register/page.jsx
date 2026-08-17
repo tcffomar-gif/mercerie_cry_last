@@ -34,7 +34,7 @@
 
 // //       // verifier si email est existe ou non
 
-// //       const result = await fetch(`${process.env.NEXT_PUBLIC_MY_URL}/api/userExist`, {
+// //       const result = await fetch(`/api/userExist`, {
 // //         method: "POST", // *GET, POST, PUT, DELETE, etc.
 
 // //         headers: {
@@ -54,7 +54,7 @@
 // //         }
 
 // //         // send data  to mongodb
-// //         const response = await fetch(`${process.env.NEXT_PUBLIC_MY_URL}/api/register`, {
+// //         const response = await fetch(`/api/register`, {
 // //           method: "POST", // *GET, POST, PUT, DELETE, etc.
 // //           body: JSON.stringify({ email,password }), // body data type must match "Content-Type" header
 // //         });
@@ -208,7 +208,7 @@
 //     try {
 //       // Vérifier si l'email existe déjà
 //       const result = await fetch(
-//         `${process.env.NEXT_PUBLIC_MY_URL}/api/userExist`,
+//         `/api/userExist`,
 //         {
 //           method: "POST",
 //           headers: {
@@ -228,7 +228,7 @@
 
 //         // Envoyer les données au backend pour créer un compte
 //         const response = await fetch(
-//           `${process.env.NEXT_PUBLIC_MY_URL}/api/register`,
+//           `/api/register`,
 //           {
 //             method: "POST",
 //             headers: {
@@ -403,7 +403,7 @@ const Page = () => {
     try {
       // Vérifier si l'email existe déjà
       const result = await fetch(
-        `${process.env.NEXT_PUBLIC_MY_URL}/api/userExist`,
+        `/api/userExist`,
         {
           method: "POST",
           headers: {
@@ -424,7 +424,7 @@ const Page = () => {
         const emailVerified= false
         // Envoyer les données au backend pour créer un compte
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_MY_URL}/api/register`,
+          `/api/register`,
           {
             method: "POST",
             headers: {

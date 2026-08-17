@@ -24,7 +24,7 @@ export const CartProvider = ({ children }) => {
   const { data: session, status } = useSession();
 
   const requestCart = useCallback(async (id) => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_MY_URL}/api/get_cart_client`, {
+    const response = await fetch(`/api/get_cart_client`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id_user: id }),
@@ -84,7 +84,7 @@ export const CartProvider = ({ children }) => {
       setCartError(null);
 
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_MY_URL}/api/delete_item_cart`, {
+        const response = await fetch(`/api/delete_item_cart`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ id_item: itemId }),
@@ -116,7 +116,7 @@ export const CartProvider = ({ children }) => {
       try {
         await Promise.all(
           cartItems.map((item) =>
-            fetch(`${process.env.NEXT_PUBLIC_MY_URL}/api/delete_cart_client`, {
+            fetch(`/api/delete_cart_client`, {
               method: "DELETE",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ id_item: item._id }),

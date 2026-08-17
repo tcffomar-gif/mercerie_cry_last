@@ -25,7 +25,7 @@ const fetchProduct = async (id) => {
   }
 
   try {
-    const url = `${BASE_URL || ''}/api/get_one_product?id=${encodeURIComponent(id)}`;
+    const url = `/api/get_one_product?id=${encodeURIComponent(id)}`;
     const res = await fetch(url, {
       headers: { "Content-Type": "application/json" },
       next: {
@@ -55,7 +55,7 @@ const fetchProduct = async (id) => {
 
 const fetchMinPrice = async () => {
   try {
-    const res = await fetch(`${BASE_URL}/api/get_min_price`, {
+    const res = await fetch(`/api/get_min_price`, {
       next: { revalidate: DEFAULT_REVALIDATE_SECONDS },
     });
 

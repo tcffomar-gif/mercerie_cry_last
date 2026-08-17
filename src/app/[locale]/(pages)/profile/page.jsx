@@ -26,7 +26,7 @@ const Page = () => {
     }
 
     // Envoyer les données au backend
-    const response = await fetch(`${process.env.NEXT_PUBLIC_MY_URL}/api/change-password`, {
+    const response = await fetch(`/api/change-password`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

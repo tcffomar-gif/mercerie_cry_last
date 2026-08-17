@@ -9,7 +9,7 @@ const Hero = React.memo(() => {
 
   const fetchData = useCallback(async () => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_MY_URL}/api/get_length_order_product`, {
+      const res = await fetch(`/api/get_length_order_product`, {
         cache: 'no-store', // Désactive le cache pour avoir des données fraîches à chaque requête
       });
 
